@@ -1,6 +1,6 @@
 const canvas = document.querySelector("canvas");
-canvas.width = 1024;
-canvas.height = 400;
+canvas.width = 1200;
+canvas.height = 500;
 canvas.style.backgroundColor = "white";
 const ctx = canvas.getContext("2d");
 
@@ -14,12 +14,12 @@ let keyPressed = {
 
 class Player {
   constructor() {
-    this.position = {
-      x: 100,
-      y: 100,
-    };
     this.width = 50;
     this.height = 50;
+    this.position = {
+      x: canvas.width / 2 - this.width / 2,
+      y: 50,
+    };
     this.velocity = { x: 0, y: 3 };
   }
 
@@ -29,7 +29,7 @@ class Player {
   }
 
   update() {
-    if (!(this.position.x + this.width + this.velocity.x <= canvas.width + 4)) {
+    if (!(this.position.x + this.width + this.velocity.x <= canvas.width)) {
       this.velocity.x = 0;
     } else if (!(this.position.x + this.velocity.x >= 0)) {
       this.velocity.x = 0;
@@ -55,15 +55,19 @@ const animation = () => {
   requestAnimationFrame(animation);
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 
+  ctx.font = "40px Roboto";
+  ctx.fillStyle = "#262626c4";
+  ctx.fillText("Game", canvas.width / 2 - 50, canvas.height / 2);
+
   if (keyPressed.d) {
-    myPlayer.velocity.x = 5;
+    myPlayer.velocity.x = 8;
   } else if (keyPressed.a) {
-    myPlayer.velocity.x = -5;
+    myPlayer.velocity.x = -8;
   } else myPlayer.velocity.x = 0;
 
   if (keyPressed.w && myPlayer.velocity.y == 0) {
     console.log(myPlayer.velocity.y);
-    myPlayer.velocity.y = -10;
+    myPlayer.velocity.y = -20;
   }
 
   myPlayer.update();

@@ -3,7 +3,7 @@
 https://test-platformer.000webhostapp.com/
 
 
-![image](https://user-images.githubusercontent.com/56107355/161335831-a2363a4e-a1db-4eaa-aba1-830ea2bd84f7.png)
+![image](https://user-images.githubusercontent.com/56107355/161337365-ddc2e97e-c43f-47f2-9597-8b481e4d42c7.png)
 
 
 
